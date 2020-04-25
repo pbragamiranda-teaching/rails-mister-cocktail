@@ -17,13 +17,10 @@ url = 'https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list'
 read = open(url).read
 result = JSON.parse(read)
 
-result.each do |i|
-	text = "Current number is: #{i}"
-  	puts text
+result['drinks'].each do |ingredient|
+	new_ingredient = Ingredient.create!(name: ingredient['strIngredient1'])
+	puts new_ingredient.name
 end
-
-  
-
 
 
 # puts "Created #{Ingredient.name}"
