@@ -19,10 +19,7 @@ result = JSON.parse(read)
 
 result['drinks'].each do |ingredient|
 	new_ingredient = Ingredient.create!(name: ingredient['strIngredient1'])
-	puts new_ingredient.name
+	puts "Created #{new_ingredient.name}"
 end
-
-
-# puts "Created #{Ingredient.name}"
 
 puts 'Finished!'
